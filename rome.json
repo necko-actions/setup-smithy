@@ -1,0 +1,22 @@
+{
+	"$schema": "./node_modules/rome/configuration_schema.json",
+	"formatter": {
+		"lineWidth": 80,
+		"indentStyle": "tab"
+	},
+	"linter": {
+		"rules": {
+			"correctness": {
+				"noUnreachableSuper": "off"
+			}
+		}
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignore": ["dist"]
+	}
+}

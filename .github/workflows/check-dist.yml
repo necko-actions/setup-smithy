@@ -1,0 +1,11 @@
+name: Check build files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check-dist:
+    uses: necko-actions/reusable-workflows/.github/workflows/check-dist.yml@v1

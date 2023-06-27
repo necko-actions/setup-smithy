@@ -1,0 +1,15 @@
+{
+	"version": "1.0",
+	"maven": {
+		"dependencies": [
+			"software.amazon.smithy.typescript:smithy-typescript-codegen:0.15.0",
+			"software.amazon.smithy.typescript:smithy-aws-typescript-codegen:0.15.0",
+			"software.amazon.smithy:smithy-model:1.33.0",
+			"software.amazon.smithy:smithy-openapi:1.33.0",
+			"software.amazon.smithy:smithy-aws-traits:1.33.0",
+			"software.amazon.smithy:smithy-aws-apigateway-openapi:1.33.0",
+			"software.amazon.smithy:smithy-validation-model:1.33.0",
+			"software.amazon.smithy:smithy-aws-apigateway-traits:1.33.0"
+		]
+	}
+}

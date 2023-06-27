@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  test-action:
+    strategy:
+      max-parallel: 3
+      matrix:
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: necko-actions/setup-smithy@v1
+        with:
+          version: "1.33.0"
+          smithy-build: "smithy-build.json"
+      - run: |
+          smithy --version
+          smithy build

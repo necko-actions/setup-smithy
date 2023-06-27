@@ -1,0 +1,9 @@
+name: Rome CI
+
+on:
+  pull_request:
+
+jobs:
+  rome-ci:
+    uses: necko-actions/reusable-workflows/.github/workflows/rome.yml@v1
+
