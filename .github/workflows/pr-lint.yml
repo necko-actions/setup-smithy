@@ -1,0 +1,16 @@
+name: Lint Pull Request Title
+
+on:
+  pull_request_target:
+    types:
+      - labeled
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - edited
+
+jobs:
+  pull-request-lint:
+    uses: necko-actions/reusable-workflows/.github/workflows/pull-request-lint.yml@v1
+

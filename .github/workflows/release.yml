@@ -1,0 +1,11 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    uses: necko-actions/reusable-workflows/.github/workflows/release-please.yml@v1
+
