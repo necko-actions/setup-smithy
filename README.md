@@ -33,7 +33,7 @@ steps:
     working-directory: samples
 ```
 
-You can see the example running [.github/workflows/test-setup-smithy-action.yml](.github/workflows/test-setup-smithy-action.yml).
+You can see the example running [.github/workflows/test-setup-smithy.yml](.github/workflows/test-setup-smithy.yml).
 
 ## Supported architecture
 
