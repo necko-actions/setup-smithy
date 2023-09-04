@@ -33,6 +33,7 @@ async function action() {
 		}
 
 		core.addPath(path.join(extractedSmithyFolder, "bin"));
+		core.setOutput("SMITHY_PATH", extractedSmithyFolder);
 	} catch (error) {
 		if (error instanceof Error) core.setFailed(error.message);
 	}
