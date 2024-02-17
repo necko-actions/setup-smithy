@@ -13,7 +13,7 @@ Running smithy CLI :
 
 ```yaml
 steps:
-  - uses: actions/checkout@v3
+  - uses: actions/checkout@v4
   - uses: necko-actions/setup-smithy@v1
     with:
       version: "1.33.0"
@@ -24,7 +24,7 @@ Cache dependencies :
 
 ```yaml
 steps:
-  - uses: actions/checkout@v3
+  - uses: actions/checkout@v4
   - uses: necko-actions/setup-smithy@v1
     with:
       version: "1.33.0"
