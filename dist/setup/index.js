@@ -63222,10 +63222,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+const os = __importStar(__nccwpck_require__(2037));
+const path = __importStar(__nccwpck_require__(1017));
 const core = __importStar(__nccwpck_require__(2186));
 const tool_cache_1 = __nccwpck_require__(7784);
-const path = __importStar(__nccwpck_require__(1017));
-const os = __importStar(__nccwpck_require__(2037));
 const utils_1 = __nccwpck_require__(1314);
 function action() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -63299,11 +63299,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getArchitecture = exports.save = exports.restore = exports.computeCacheKey = void 0;
 const fs = __importStar(__nccwpck_require__(7147));
-const glob = __importStar(__nccwpck_require__(8090));
+const os = __importStar(__nccwpck_require__(2037));
+const path = __importStar(__nccwpck_require__(1017));
 const cache = __importStar(__nccwpck_require__(7799));
 const core = __importStar(__nccwpck_require__(2186));
-const path = __importStar(__nccwpck_require__(1017));
-const os = __importStar(__nccwpck_require__(2037));
+const glob = __importStar(__nccwpck_require__(8090));
 var State;
 (function (State) {
     State["HASH"] = "HASH";
@@ -63320,7 +63320,7 @@ function computeCacheKey(smithyBuildPath) {
         const smithyBuild = JSON.parse(fs.readFileSync(smithyBuildPath).toString());
         fs.writeFileSync("smithy-lock.json", JSON.stringify(smithyBuild.maven));
         const hash = yield glob.hashFiles("smithy-lock.json");
-        return `${CACHE_KEY_PREFIX}-${process.env["RUNNER_OS"]}-${architecture}-${hash}`;
+        return `${CACHE_KEY_PREFIX}-${process.env.RUNNER_OS}-${architecture}-${hash}`;
     });
 }
 exports.computeCacheKey = computeCacheKey;
@@ -63336,7 +63336,7 @@ function restore(smithyBuildPath) {
         }
         else {
             core.setOutput("cache-hit", false);
-            core.info(`cache is not found`);
+            core.info("cache is not found");
         }
     });
 }
@@ -63350,7 +63350,7 @@ function save() {
             core.info("Error retrieving key from state.");
             return;
         }
-        else if (matchedKey === primaryKey) {
+        if (matchedKey === primaryKey) {
             // no change in target directories
             core.info(`Cache hit occurred on the primary key ${primaryKey}, not saving cache.`);
             return;

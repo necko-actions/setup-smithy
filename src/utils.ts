@@ -1,9 +1,9 @@
 import * as fs from "fs";
-import * as glob from "@actions/glob";
+import * as os from "os";
+import * as path from "path";
 import * as cache from "@actions/cache";
 import * as core from "@actions/core";
-import * as path from "path";
-import * as os from "os";
+import * as glob from "@actions/glob";
 
 enum State {
 	HASH = "HASH",
@@ -21,7 +21,7 @@ export async function computeCacheKey(smithyBuildPath: string) {
 	const smithyBuild = JSON.parse(fs.readFileSync(smithyBuildPath).toString());
 	fs.writeFileSync("smithy-lock.json", JSON.stringify(smithyBuild.maven));
 	const hash = await glob.hashFiles("smithy-lock.json");
-	return `${CACHE_KEY_PREFIX}-${process.env["RUNNER_OS"]}-${architecture}-${hash}`;
+	return `${CACHE_KEY_PREFIX}-${process.env.RUNNER_OS}-${architecture}-${hash}`;
 }
 
 export async function restore(smithyBuildPath: string) {
@@ -37,7 +37,7 @@ export async function restore(smithyBuildPath: string) {
 		core.info(`Cache restored from key: ${matchedKey}`);
 	} else {
 		core.setOutput("cache-hit", false);
-		core.info(`cache is not found`);
+		core.info("cache is not found");
 	}
 }
 
@@ -49,7 +49,8 @@ export async function save() {
 	if (!primaryKey) {
 		core.info("Error retrieving key from state.");
 		return;
-	} else if (matchedKey === primaryKey) {
+	}
+	if (matchedKey === primaryKey) {
 		// no change in target directories
 		core.info(
 			`Cache hit occurred on the primary key ${primaryKey}, not saving cache.`,
