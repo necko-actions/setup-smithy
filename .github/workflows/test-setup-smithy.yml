@@ -16,7 +16,7 @@ jobs:
       - uses: necko-actions/setup-smithy@v1
         with:
           version: "1.33.0"
-          smithy-build: "smithy-build.json"
+          smithy-build: "samples/smithy-build.json"
       - run: |
           smithy --version
           smithy build
