@@ -63247,6 +63247,7 @@ function action() {
                 yield (0, utils_1.restore)(smithyBuildPath);
             }
             core.addPath(path.join(extractedSmithyFolder, "bin"));
+            core.setOutput("SMITHY_PATH", extractedSmithyFolder);
         }
         catch (error) {
             if (error instanceof Error)
