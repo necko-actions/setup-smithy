@@ -5,7 +5,7 @@
     "url": "https://www.necko.tech/",
     "organization": true
   },
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "packageManager": "yarn@3.6.0",
   "devDependencies": {
@@ -13,10 +13,10 @@
     "@actions/core": "^1.10.0",
     "@actions/glob": "^0.4.0",
     "@actions/tool-cache": "^2.0.1",
+    "@biomejs/biome": "^1.5.3",
     "@tsconfig/recommended": "^1.0.2",
     "@types/node": "^20.3.2",
     "@vercel/ncc": "^0.36.1",
-    "rome": "^12.1.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.3"
   },
@@ -24,6 +24,7 @@
     "build:action": "yarn ncc build src/index.ts -o dist/setup",
     "build:cache": "yarn ncc build src/cache.ts -o dist/cache",
     "build": "yarn run build:action && yarn run build:cache",
-    "format": "yarn rome format . --write"
+    "format": "yarn biome format . --write",
+    "ci": "yarn biome ci ."
   }
 }

@@ -216,6 +216,97 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/biome@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/biome@npm:1.5.3"
+  dependencies:
+    "@biomejs/cli-darwin-arm64": 1.5.3
+    "@biomejs/cli-darwin-x64": 1.5.3
+    "@biomejs/cli-linux-arm64": 1.5.3
+    "@biomejs/cli-linux-arm64-musl": 1.5.3
+    "@biomejs/cli-linux-x64": 1.5.3
+    "@biomejs/cli-linux-x64-musl": 1.5.3
+    "@biomejs/cli-win32-arm64": 1.5.3
+    "@biomejs/cli-win32-x64": 1.5.3
+  dependenciesMeta:
+    "@biomejs/cli-darwin-arm64":
+      optional: true
+    "@biomejs/cli-darwin-x64":
+      optional: true
+    "@biomejs/cli-linux-arm64":
+      optional: true
+    "@biomejs/cli-linux-arm64-musl":
+      optional: true
+    "@biomejs/cli-linux-x64":
+      optional: true
+    "@biomejs/cli-linux-x64-musl":
+      optional: true
+    "@biomejs/cli-win32-arm64":
+      optional: true
+    "@biomejs/cli-win32-x64":
+      optional: true
+  bin:
+    biome: bin/biome
+  checksum: 5155dc05ca3a9fd0228eb74df4f21d0ab311e4b02452c6b3dc5615825eab402df6824992014ff19f82bed49fd286e0001ebe608efdba71a41f3f6c06305b1d7c
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.5.3"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-darwin-x64@npm:1.5.3"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64-musl@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.5.3"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-arm64@npm:1.5.3"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64-musl@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.5.3"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-linux-x64@npm:1.5.3"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-arm64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-win32-arm64@npm:1.5.3"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-x64@npm:1.5.3":
+  version: 1.5.3
+  resolution: "@biomejs/cli-win32-x64@npm:1.5.3"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -271,10 +362,10 @@ __metadata:
     "@actions/core": ^1.10.0
     "@actions/glob": ^0.4.0
     "@actions/tool-cache": ^2.0.1
+    "@biomejs/biome": ^1.5.3
     "@tsconfig/recommended": ^1.0.2
     "@types/node": ^20.3.2
     "@vercel/ncc": ^0.36.1
-    rome: ^12.1.3
     ts-node: ^10.9.1
     typescript: ^5.1.3
   languageName: unknown
@@ -300,48 +391,6 @@ __metadata:
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
   checksum: 6ad6a00fc4f2f2cfc6bff76fb1d88b8ee20bc0601e18ebb01b6d4be583733a860239a521a7fbca73b612e66705078809483549d2b18f370eb346c5155c8e4a0f
-  languageName: node
-  linkType: hard
-
-"@rometools/cli-darwin-arm64@npm:12.1.3":
-  version: 12.1.3
-  resolution: "@rometools/cli-darwin-arm64@npm:12.1.3"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rometools/cli-darwin-x64@npm:12.1.3":
-  version: 12.1.3
-  resolution: "@rometools/cli-darwin-x64@npm:12.1.3"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@rometools/cli-linux-arm64@npm:12.1.3":
-  version: 12.1.3
-  resolution: "@rometools/cli-linux-arm64@npm:12.1.3"
-  conditions: os=linux & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rometools/cli-linux-x64@npm:12.1.3":
-  version: 12.1.3
-  resolution: "@rometools/cli-linux-x64@npm:12.1.3"
-  conditions: os=linux & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@rometools/cli-win32-arm64@npm:12.1.3":
-  version: 12.1.3
-  resolution: "@rometools/cli-win32-arm64@npm:12.1.3"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rometools/cli-win32-x64@npm:12.1.3":
-  version: 12.1.3
-  resolution: "@rometools/cli-win32-x64@npm:12.1.3"
-  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -1388,35 +1437,6 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
-  languageName: node
-  linkType: hard
-
-"rome@npm:^12.1.3":
-  version: 12.1.3
-  resolution: "rome@npm:12.1.3"
-  dependencies:
-    "@rometools/cli-darwin-arm64": 12.1.3
-    "@rometools/cli-darwin-x64": 12.1.3
-    "@rometools/cli-linux-arm64": 12.1.3
-    "@rometools/cli-linux-x64": 12.1.3
-    "@rometools/cli-win32-arm64": 12.1.3
-    "@rometools/cli-win32-x64": 12.1.3
-  dependenciesMeta:
-    "@rometools/cli-darwin-arm64":
-      optional: true
-    "@rometools/cli-darwin-x64":
-      optional: true
-    "@rometools/cli-linux-arm64":
-      optional: true
-    "@rometools/cli-linux-x64":
-      optional: true
-    "@rometools/cli-win32-arm64":
-      optional: true
-    "@rometools/cli-win32-x64":
-      optional: true
-  bin:
-    rome: bin/rome
-  checksum: 341e5520a23277bdc2571db279e72fe9427a95f4e3025cd215a989d381fe6690f6aa1c0fb9abbd318a8bfd85ff1cec2304e92b732329c8a46c69e259eeb080cc
   languageName: node
   linkType: hard
 

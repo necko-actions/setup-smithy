@@ -1,7 +1,7 @@
+import * as os from "os";
+import * as path from "path";
 import * as core from "@actions/core";
 import { downloadTool, extractTar } from "@actions/tool-cache";
-import * as path from "path";
-import * as os from "os";
 import { getArchitecture, restore } from "./utils";
 
 async function action() {
