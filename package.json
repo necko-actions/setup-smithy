@@ -9,16 +9,16 @@
   "license": "MIT",
   "packageManager": "yarn@4.1.0",
   "devDependencies": {
-    "@actions/cache": "^3.2.1",
-    "@actions/core": "^1.10.0",
+    "@actions/cache": "^3.2.4",
+    "@actions/core": "^1.10.1",
     "@actions/glob": "^0.4.0",
     "@actions/tool-cache": "^2.0.1",
     "@biomejs/biome": "^1.5.3",
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/node": "^20.3.2",
-    "@vercel/ncc": "^0.36.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.1.3"
+    "@tsconfig/recommended": "^1.0.3",
+    "@types/node": "^20.11.24",
+    "@vercel/ncc": "^0.38.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "build:action": "yarn ncc build src/index.ts -o dist/setup",
