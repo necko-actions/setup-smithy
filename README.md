@@ -13,10 +13,10 @@ Running smithy CLI :
 
 ```yaml
 steps:
-  - uses: actions/checkout@v3
+  - uses: actions/checkout@v4
   - uses: necko-actions/setup-smithy@v1
     with:
-      version: "1.33.0"
+      version: "1.45.0"
   - run: smithy --version
 ```
 
@@ -24,10 +24,10 @@ Cache dependencies :
 
 ```yaml
 steps:
-  - uses: actions/checkout@v3
+  - uses: actions/checkout@v4
   - uses: necko-actions/setup-smithy@v1
     with:
-      version: "1.33.0"
+      version: "1.45.0"
       smithy-build: "samples/smithy-build.json"
   - run: smithy build
     working-directory: samples
