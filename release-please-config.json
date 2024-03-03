@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+	"include-component-in-tag": true,
+	"changelog-sections": [
+		{
+			"type": "feat",
+			"section": "Features",
+			"hidden": false
+		},
+		{
+			"type": "fix",
+			"section": "Bug Fixes",
+			"hidden": false
+		},
+		{
+			"type": "chore",
+			"section": "Miscellaneous Chores",
+			"hidden": true
+		},
+		{
+			"type": "revert",
+			"section": "Reverts",
+			"hidden": false
+		},
+		{
+			"type": "docs",
+			"section": "Documentation",
+			"hidden": false
+		},
+		{
+			"type": "refactor",
+			"section": "Code Refactoring",
+			"hidden": false
+		},
+
+		{
+			"type": "ci",
+			"section": "Continuous Integration",
+			"hidden": false
+		},
+		{
+			"type": "deps",
+			"section": "Dependencies",
+			"hidden": false
+		}
+	],
+	"packages": {
+		".": {
+			"component": "@necko-tech/setup-smithy"
+		}
+	}
+}
