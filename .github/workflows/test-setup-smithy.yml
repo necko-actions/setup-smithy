@@ -21,7 +21,7 @@ jobs:
       - uses: necko-actions/setup-smithy@switch-to-zip
         with:
           version: "1.47.0"
-          smithy-build: "samples/smithy-build.json"
+#          smithy-build: "samples/smithy-build.json"
       - run: |
           smithy --version
           smithy build
