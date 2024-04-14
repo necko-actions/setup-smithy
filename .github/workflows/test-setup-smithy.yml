@@ -18,10 +18,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - uses: necko-actions/setup-smithy@switch-to-zip
+      - uses: ./
+        name: Build
         with:
           version: "1.47.0"
-#          smithy-build: "samples/smithy-build.json"
+          smithy-build: "samples/smithy-build.json"
       - run: |
           smithy --version
           smithy build

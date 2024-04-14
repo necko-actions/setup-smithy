@@ -92833,8 +92833,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const os = __importStar(__nccwpck_require__(2037));
-const path = __importStar(__nccwpck_require__(1017));
+const fs = __importStar(__nccwpck_require__(7561));
+const os = __importStar(__nccwpck_require__(612));
+const path = __importStar(__nccwpck_require__(9411));
 const core = __importStar(__nccwpck_require__(2186));
 const tool_cache_1 = __nccwpck_require__(7784);
 const utils_1 = __nccwpck_require__(1314);
@@ -92842,8 +92843,8 @@ function getExtensionAndFunction(smithyVersion) {
     const SMITHY_MAJOR = 1;
     const SMITHY_MINOR = 47;
     const [major, minor, patch] = smithyVersion.split(".");
-    const majorInt = parseInt(major);
-    const minorInt = parseInt(minor);
+    const majorInt = Number.parseInt(major);
+    const minorInt = Number.parseInt(minor);
     if (majorInt === SMITHY_MAJOR && minorInt < SMITHY_MINOR) {
         return {
             extract: tool_cache_1.extractTar,
@@ -92868,10 +92869,14 @@ function action() {
         const platform = os.platform();
         const { extension, extract } = getExtensionAndFunction(smithyVersion);
         try {
-            const SMITHY_RELEASE_URL = `https://github.com/awslabs/smithy/releases/download/${smithyVersion}/smithy-cli-${platform === "win32" ? "windows" : platform}-${(0, utils_1.getArchitecture)()}.${extension}`;
+            const SMITHY_RELEASE_URL = `https://github.com/smithy-lang/smithy/releases/download/${smithyVersion}/smithy-cli-${platform === "win32" ? "windows" : platform}-${(0, utils_1.getArchitecture)()}.${extension}`;
             core.info(`Retrieve Smithy CLI from ${SMITHY_RELEASE_URL}`);
-            const smithyTarGzPath = yield (0, tool_cache_1.downloadTool)(SMITHY_RELEASE_URL);
-            const extractedSmithyFolder = yield extract(smithyTarGzPath);
+            const smithyArchivePath = yield (0, tool_cache_1.downloadTool)(SMITHY_RELEASE_URL);
+            let extractedSmithyFolder = yield extract(smithyArchivePath);
+            const dirs = fs.readdirSync(extractedSmithyFolder);
+            if (dirs.length === 1) {
+                extractedSmithyFolder = path.join(extractedSmithyFolder, dirs[0]);
+            }
             if (smithyBuildPath) {
                 yield (0, utils_1.restore)(smithyBuildPath);
             }
@@ -92928,9 +92933,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getArchitecture = exports.save = exports.restore = exports.computeCacheKey = void 0;
-const fs = __importStar(__nccwpck_require__(7147));
-const os = __importStar(__nccwpck_require__(2037));
-const path = __importStar(__nccwpck_require__(1017));
+const fs = __importStar(__nccwpck_require__(7561));
+const os = __importStar(__nccwpck_require__(612));
+const path = __importStar(__nccwpck_require__(9411));
 const cache = __importStar(__nccwpck_require__(7799));
 const core = __importStar(__nccwpck_require__(2186));
 const glob = __importStar(__nccwpck_require__(8090));
@@ -93130,6 +93135,30 @@ module.exports = require("net");
 
 "use strict";
 module.exports = require("node:events");
+
+/***/ }),
+
+/***/ 7561:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:fs");
+
+/***/ }),
+
+/***/ 612:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:os");
+
+/***/ }),
+
+/***/ 9411:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:path");
 
 /***/ }),
 

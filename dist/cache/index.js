@@ -88668,9 +88668,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getArchitecture = exports.save = exports.restore = exports.computeCacheKey = void 0;
-const fs = __importStar(__nccwpck_require__(7147));
-const os = __importStar(__nccwpck_require__(2037));
-const path = __importStar(__nccwpck_require__(1017));
+const fs = __importStar(__nccwpck_require__(7561));
+const os = __importStar(__nccwpck_require__(612));
+const path = __importStar(__nccwpck_require__(9411));
 const cache = __importStar(__nccwpck_require__(7799));
 const core = __importStar(__nccwpck_require__(2186));
 const glob = __importStar(__nccwpck_require__(8090));
@@ -88870,6 +88870,30 @@ module.exports = require("net");
 
 "use strict";
 module.exports = require("node:events");
+
+/***/ }),
+
+/***/ 7561:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:fs");
+
+/***/ }),
+
+/***/ 612:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:os");
+
+/***/ }),
+
+/***/ 9411:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:path");
 
 /***/ }),
 

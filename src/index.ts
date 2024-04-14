@@ -1,5 +1,6 @@
-import * as os from "os";
-import * as path from "path";
+import * as fs from "node:fs";
+import * as os from "node:os";
+import * as path from "node:path";
 import * as core from "@actions/core";
 import { downloadTool, extractTar, extractZip } from "@actions/tool-cache";
 import { getArchitecture, restore } from "./utils";
@@ -11,8 +12,8 @@ function getExtensionAndFunction(smithyVersion: string): {
 	const SMITHY_MAJOR = 1;
 	const SMITHY_MINOR = 47;
 	const [major, minor, patch] = smithyVersion.split(".");
-	const majorInt = parseInt(major);
-	const minorInt = parseInt(minor);
+	const majorInt = Number.parseInt(major);
+	const minorInt = Number.parseInt(minor);
 
 	if (majorInt === SMITHY_MAJOR && minorInt < SMITHY_MINOR) {
 		return {
@@ -42,15 +43,21 @@ async function action() {
 	const { extension, extract } = getExtensionAndFunction(smithyVersion);
 
 	try {
-		const SMITHY_RELEASE_URL = `https://github.com/awslabs/smithy/releases/download/${smithyVersion}/smithy-cli-${
+		const SMITHY_RELEASE_URL = `https://github.com/smithy-lang/smithy/releases/download/${smithyVersion}/smithy-cli-${
 			platform === "win32" ? "windows" : platform
 		}-${getArchitecture()}.${extension}`;
 
 		core.info(`Retrieve Smithy CLI from ${SMITHY_RELEASE_URL}`);
 
-		const smithyTarGzPath = await downloadTool(SMITHY_RELEASE_URL);
+		const smithyArchivePath = await downloadTool(SMITHY_RELEASE_URL);
 
-		const extractedSmithyFolder = await extract(smithyTarGzPath);
+		let extractedSmithyFolder = await extract(smithyArchivePath);
+
+		const dirs = fs.readdirSync(extractedSmithyFolder);
+
+		if (dirs.length === 1) {
+			extractedSmithyFolder = path.join(extractedSmithyFolder, dirs[0]);
+		}
 
 		if (smithyBuildPath) {
 			await restore(smithyBuildPath);
