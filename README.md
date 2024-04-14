@@ -16,7 +16,7 @@ steps:
   - uses: actions/checkout@v4
   - uses: necko-actions/setup-smithy@v1
     with:
-      version: "1.45.0"
+      version: "1.47.0"
   - run: smithy --version
 ```
 
@@ -27,7 +27,7 @@ steps:
   - uses: actions/checkout@v4
   - uses: necko-actions/setup-smithy@v1
     with:
-      version: "1.45.0"
+      version: "1.47.0"
       smithy-build: "samples/smithy-build.json"
   - run: smithy build
     working-directory: samples
