@@ -2,6 +2,11 @@ name: Test Setup Smithy
 
 on:
   workflow_dispatch:
+    inputs:
+      smithy-version:
+        default: 1.47.0
+        required: false
+        description: "Smithy version to test"
   pull_request:
 
 jobs:
@@ -13,9 +18,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - uses: necko-actions/setup-smithy@v1
+      - uses: ./
+        name: Build
         with:
-          version: "1.45.0"
+          version: "1.47.0"
           smithy-build: "samples/smithy-build.json"
       - run: |
           smithy --version
