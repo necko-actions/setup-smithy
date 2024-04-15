@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/necko-actions/setup-smithy/compare/@necko-tech/setup-smithy-v1.1.0...@necko-tech/setup-smithy-v1.2.0) (2024-04-15)
+
+
+### Features
+
+* **action:** extract zip instead of tar for version &gt;= 1.47.0 ([#16](https://github.com/necko-actions/setup-smithy/issues/16)) ([4bd82d2](https://github.com/necko-actions/setup-smithy/commit/4bd82d20a436256f42bb8368e77440b105ba10b3))
+
 ## [1.1.0](https://github.com/necko-actions/setup-smithy/compare/@necko-tech/setup-smithy-v1.0.0...@necko-tech/setup-smithy-v1.1.0) (2024-03-03)
 
 
