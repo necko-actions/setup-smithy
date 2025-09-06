@@ -91454,9 +91454,9 @@ const utils_1 = __nccwpck_require__(1314);
 function getExtensionAndFunction(smithyVersion) {
     const SMITHY_MAJOR = 1;
     const SMITHY_MINOR = 47;
-    const [major, minor, patch] = smithyVersion.split(".");
-    const majorInt = Number.parseInt(major);
-    const minorInt = Number.parseInt(minor);
+    const [majorInt, minorInt] = (smithyVersion !== null && smithyVersion !== void 0 ? smithyVersion : "")
+        .split(".")
+        .map(n => Number.parseInt(n) || 0);
     if (majorInt === SMITHY_MAJOR && minorInt < SMITHY_MINOR) {
         return {
             extract: tool_cache_1.extractTar,
@@ -91468,10 +91468,19 @@ function getExtensionAndFunction(smithyVersion) {
         extension: "zip",
     };
 }
+function getSmithyDownloadUrl(platform, extension, smithyVersion) {
+    const GITHUB_RELEASES_BASE = "https://github.com/smithy-lang/smithy/releases";
+    const baseDownloadUrl = smithyVersion
+        ? `${GITHUB_RELEASES_BASE}/download/${smithyVersion}`
+        : `${GITHUB_RELEASES_BASE}/latest/download`;
+    const platformName = platform === "win32" ? "windows" : platform;
+    const arch = (0, utils_1.getArchitecture)();
+    return `${baseDownloadUrl}/smithy-cli-${platformName}-${arch}.${extension}`;
+}
 function action() {
     return __awaiter(this, void 0, void 0, function* () {
         const smithyVersion = core.getInput("version", {
-            required: true,
+            required: false,
             trimWhitespace: true,
         });
         const smithyBuildPath = core.getInput("smithy-build", {
@@ -91481,9 +91490,9 @@ function action() {
         const platform = os.platform();
         const { extension, extract } = getExtensionAndFunction(smithyVersion);
         try {
-            const SMITHY_RELEASE_URL = `https://github.com/smithy-lang/smithy/releases/download/${smithyVersion}/smithy-cli-${platform === "win32" ? "windows" : platform}-${(0, utils_1.getArchitecture)()}.${extension}`;
-            core.info(`Retrieve Smithy CLI from ${SMITHY_RELEASE_URL}`);
-            const smithyArchivePath = yield (0, tool_cache_1.downloadTool)(SMITHY_RELEASE_URL);
+            const downloadUrl = getSmithyDownloadUrl(platform, extension, smithyVersion);
+            core.info(`Retrieve Smithy CLI from ${downloadUrl}`);
+            const smithyArchivePath = yield (0, tool_cache_1.downloadTool)(downloadUrl);
             let extractedSmithyFolder = yield extract(smithyArchivePath);
             const dirs = fs.readdirSync(extractedSmithyFolder);
             if (dirs.length === 1) {

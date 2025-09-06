@@ -3,7 +3,7 @@ description: 'Installing a version of Smithy CLI and adding it to the PATH'
 author: 'Necko Technologies'
 inputs:
   version:
-    required: true
+    required: false
     description: "Smithy CLI version"
   smithy-build:
     required: false
