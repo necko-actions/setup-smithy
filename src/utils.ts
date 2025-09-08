@@ -62,11 +62,11 @@ export async function save() {
 		await cache.saveCache(SMITHY_M2_CACHE_PATHS, primaryKey);
 		core.info(`Cache saved with the key: ${primaryKey}`);
 	} catch (error) {
-		// @ts-ignore
+		// @ts-expect-error
 		core.error(error.message);
-		// @ts-ignore
+		// @ts-expect-error
 		if (error.name === cache.ReserveCacheError.name) {
-			// @ts-ignore
+			// @ts-expect-error
 			core.info(error.message);
 		}
 	}

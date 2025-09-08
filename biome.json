@@ -17,6 +17,6 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"ignore": ["dist"]
+		"includes": ["**", "!**/dist"]
 	}
 }

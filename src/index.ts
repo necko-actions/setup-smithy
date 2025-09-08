@@ -11,9 +11,9 @@ function getExtensionAndFunction(smithyVersion: string): {
 } {
 	const SMITHY_MAJOR = 1;
 	const SMITHY_MINOR = 47;
-	const [major, minor, patch] = smithyVersion.split(".");
-	const majorInt = Number.parseInt(major);
-	const minorInt = Number.parseInt(minor);
+	const [major, minor, _patch] = smithyVersion.split(".");
+	const majorInt = Number.parseInt(major, 10);
+	const minorInt = Number.parseInt(minor, 10);
 
 	if (majorInt === SMITHY_MAJOR && minorInt < SMITHY_MINOR) {
 		return {
