@@ -21,7 +21,7 @@ jobs:
       - uses: ./
         name: Build
         with:
-          version: ${{ inputs.smithy-version }}
+          version: ${{ inputs.smithy-version || '1.47.0' }}
           smithy-build: "samples/smithy-build.json"
       - run: |
           smithy --version
