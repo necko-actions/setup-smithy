@@ -12,4 +12,13 @@ jobs:
     with:
       directory: dist
   biome:
-    uses: necko-actions/reusable-workflows/.github/workflows/biome.yml@v1
+    permissions:
+      contents: read
+    name: Biome
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+      - run: biome ci .
+        name: Run Biome CI

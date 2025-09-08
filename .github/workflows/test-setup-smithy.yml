@@ -17,11 +17,11 @@ jobs:
         os: ["ubuntu-latest", "windows-latest", "macos-latest"]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./
         name: Build
         with:
-          version: "1.47.0"
+          version: ${{ inputs.smithy-version || '1.47.0' }}
           smithy-build: "samples/smithy-build.json"
       - run: |
           smithy --version
