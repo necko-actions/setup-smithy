@@ -12,9 +12,9 @@ function getExtensionAndFunction(smithyVersion?: string): {
 	const SMITHY_MAJOR = 1;
 	const SMITHY_MINOR = 47;
 
-    const [majorInt, minorInt] = (smithyVersion ?? "")
-        .split(".")
-        .map(n => Number.parseInt(n) || 0);
+	const [majorInt, minorInt] = (smithyVersion ?? "")
+		.split(".")
+		.map((n) => Number.parseInt(n) || 0);
 
 	if (majorInt === SMITHY_MAJOR && minorInt < SMITHY_MINOR) {
 		return {
@@ -28,17 +28,21 @@ function getExtensionAndFunction(smithyVersion?: string): {
 	};
 }
 
-function getSmithyDownloadUrl(platform: string, extension: string, smithyVersion?: string) {
-    const GITHUB_RELEASES_BASE = "https://github.com/smithy-lang/smithy/releases";
+function getSmithyDownloadUrl(
+	platform: string,
+	extension: string,
+	smithyVersion?: string,
+) {
+	const GITHUB_RELEASES_BASE = "https://github.com/smithy-lang/smithy/releases";
 
-    const baseDownloadUrl = smithyVersion
-        ? `${GITHUB_RELEASES_BASE}/download/${smithyVersion}`
-        : `${GITHUB_RELEASES_BASE}/latest/download`;
+	const baseDownloadUrl = smithyVersion
+		? `${GITHUB_RELEASES_BASE}/download/${smithyVersion}`
+		: `${GITHUB_RELEASES_BASE}/latest/download`;
 
-    const platformName = platform === "win32" ? "windows" : platform;
-    const arch = getArchitecture();
+	const platformName = platform === "win32" ? "windows" : platform;
+	const arch = getArchitecture();
 
-    return `${baseDownloadUrl}/smithy-cli-${platformName}-${arch}.${extension}`;
+	return `${baseDownloadUrl}/smithy-cli-${platformName}-${arch}.${extension}`;
 }
 
 async function action() {
@@ -57,7 +61,11 @@ async function action() {
 	const { extension, extract } = getExtensionAndFunction(smithyVersion);
 
 	try {
-        const downloadUrl= getSmithyDownloadUrl(platform, extension, smithyVersion);
+		const downloadUrl = getSmithyDownloadUrl(
+			platform,
+			extension,
+			smithyVersion,
+		);
 		core.info(`Retrieve Smithy CLI from ${downloadUrl}`);
 
 		const smithyArchivePath = await downloadTool(downloadUrl);
