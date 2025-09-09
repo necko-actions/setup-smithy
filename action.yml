@@ -9,7 +9,7 @@ inputs:
     required: false
     description: "path of smithy-build.json file for cache"
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/setup/index.js'
   post: 'dist/cache/index.js'
   post-if: success()

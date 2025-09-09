@@ -5,11 +5,11 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"@actions/cache@npm:^3.2.4":
-  version: 3.2.4
-  resolution: "@actions/cache@npm:3.2.4"
+"@actions/cache@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "@actions/cache@npm:4.0.5"
   dependencies:
-    "@actions/core": "npm:^1.10.0"
+    "@actions/core": "npm:^1.11.1"
     "@actions/exec": "npm:^1.0.1"
     "@actions/glob": "npm:^0.1.0"
     "@actions/http-client": "npm:^2.1.1"
@@ -17,13 +17,23 @@ __metadata:
     "@azure/abort-controller": "npm:^1.1.0"
     "@azure/ms-rest-js": "npm:^2.6.0"
     "@azure/storage-blob": "npm:^12.13.0"
+    "@protobuf-ts/runtime-rpc": "npm:^2.11.1"
     semver: "npm:^6.3.1"
-    uuid: "npm:^3.3.3"
-  checksum: 10/f315f011c392d64684009faf2ac22350b79f3f5b2e48d783f4ff1b55a7c830f6f49d7d303fee7fa99641feed08fc61ef98aadac939e4881b51dccc90e651a9af
+  checksum: 10/e5617453ad4f17eec3e5a7b11cc2699e659a599bad690dd8f962c9bd974d5038eba4ded2806875c6495d763f85320ba6b152200223ff185583388010c4edd56c
   languageName: node
   linkType: hard
 
-"@actions/core@npm:^1.10.0, @actions/core@npm:^1.2.6, @actions/core@npm:^1.9.1":
+"@actions/core@npm:^1.11.1":
+  version: 1.11.1
+  resolution: "@actions/core@npm:1.11.1"
+  dependencies:
+    "@actions/exec": "npm:^1.1.1"
+    "@actions/http-client": "npm:^2.0.1"
+  checksum: 10/94f260e33607cc16567ce4c88014f069cd7da92baaa443b72cff80fdf4f1dcd18192e135df0d51ec29e8b82cfe214218715d482f2a7804efa5095737d1245f38
+  languageName: node
+  linkType: hard
+
+"@actions/core@npm:^1.2.6, @actions/core@npm:^1.9.1":
   version: 1.10.0
   resolution: "@actions/core@npm:1.10.0"
   dependencies:
@@ -33,17 +43,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/core@npm:^1.10.1":
-  version: 1.10.1
-  resolution: "@actions/core@npm:1.10.1"
-  dependencies:
-    "@actions/http-client": "npm:^2.0.1"
-    uuid: "npm:^8.3.2"
-  checksum: 10/d32af783ecb07f25a0f190112ee8e749a4c4cb88327d6df756ea1dcee146ab413c0e651a9c949294f8202ced1436c049d7b469485431a5cc4491d66926ec8323
-  languageName: node
-  linkType: hard
-
-"@actions/exec@npm:^1.0.0, @actions/exec@npm:^1.0.1":
+"@actions/exec@npm:^1.0.0, @actions/exec@npm:^1.0.1, @actions/exec@npm:^1.1.1":
   version: 1.1.1
   resolution: "@actions/exec@npm:1.1.1"
   dependencies:
@@ -62,13 +62,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/glob@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@actions/glob@npm:0.4.0"
+"@actions/glob@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@actions/glob@npm:0.5.0"
   dependencies:
     "@actions/core": "npm:^1.9.1"
     minimatch: "npm:^3.0.4"
-  checksum: 10/cd9dd011c4fd6086c3a2509c4bf72f08cd51e783510d4c69d59d4658f003ad606b239f9d74491996d978ce996fe2b5671416fa98f1321358b1ecd6fbcaf39b44
+  checksum: 10/70f6e3f171e73701738ab0bac88eea6152ee472d299ed1535238eff3f2f735f9928be4803960b84f21e38f2681bf6dd97fa5644f810c8d12d01b111b03285be5
   languageName: node
   linkType: hard
 
@@ -98,17 +98,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/tool-cache@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@actions/tool-cache@npm:2.0.1"
+"@actions/tool-cache@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@actions/tool-cache@npm:2.0.2"
   dependencies:
-    "@actions/core": "npm:^1.2.6"
+    "@actions/core": "npm:^1.11.1"
     "@actions/exec": "npm:^1.0.0"
     "@actions/http-client": "npm:^2.0.1"
     "@actions/io": "npm:^1.1.1"
     semver: "npm:^6.1.0"
-    uuid: "npm:^3.3.2"
-  checksum: 10/68b22d12cdad2811e365ff77cdb7105f5a0fb3c6c134884d000a27e868221e0ef01f9f278cc223f36d26cec5c076e4df4c1e396c9aae1295e8b431159b00eabc
+  checksum: 10/87ec7fef40a2ad606c4a8b47833c1818ddb42e009bd0434b49dfc8c8bd4de6b67b4edafae599e76869d923a2f940f223866012b0179dcbb172c784d90da3c3a9
   languageName: node
   linkType: hard
 
@@ -236,18 +235,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:^1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/biome@npm:1.6.4"
+"@biomejs/biome@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/biome@npm:2.2.3"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:1.6.4"
-    "@biomejs/cli-darwin-x64": "npm:1.6.4"
-    "@biomejs/cli-linux-arm64": "npm:1.6.4"
-    "@biomejs/cli-linux-arm64-musl": "npm:1.6.4"
-    "@biomejs/cli-linux-x64": "npm:1.6.4"
-    "@biomejs/cli-linux-x64-musl": "npm:1.6.4"
-    "@biomejs/cli-win32-arm64": "npm:1.6.4"
-    "@biomejs/cli-win32-x64": "npm:1.6.4"
+    "@biomejs/cli-darwin-arm64": "npm:2.2.3"
+    "@biomejs/cli-darwin-x64": "npm:2.2.3"
+    "@biomejs/cli-linux-arm64": "npm:2.2.3"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.2.3"
+    "@biomejs/cli-linux-x64": "npm:2.2.3"
+    "@biomejs/cli-linux-x64-musl": "npm:2.2.3"
+    "@biomejs/cli-win32-arm64": "npm:2.2.3"
+    "@biomejs/cli-win32-x64": "npm:2.2.3"
   dependenciesMeta:
     "@biomejs/cli-darwin-arm64":
       optional: true
@@ -267,62 +266,62 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10/22cf3c31c85257695f2820768c0d896909e31b33cb2aa6f434b741b9585458a6164580d18f9dfa40d42278d1ee6594278ae9571cd46c6d8bf26828a71e741d30
+  checksum: 10/06a645c08bf599cf6bf48e41ed99373b1773cd677061ab5e4b4827ab596cb9246efd55f49c8424fce21718af023e788c2c73316751db8af4e0f5dba42d5e9223
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-darwin-arm64@npm:1.6.4"
+"@biomejs/cli-darwin-arm64@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.2.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-darwin-x64@npm:1.6.4"
+"@biomejs/cli-darwin-x64@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-darwin-x64@npm:2.2.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.6.4"
+"@biomejs/cli-linux-arm64-musl@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.2.3"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-linux-arm64@npm:1.6.4"
+"@biomejs/cli-linux-arm64@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-linux-arm64@npm:2.2.3"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-linux-x64-musl@npm:1.6.4"
+"@biomejs/cli-linux-x64-musl@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.2.3"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-linux-x64@npm:1.6.4"
+"@biomejs/cli-linux-x64@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-linux-x64@npm:2.2.3"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-win32-arm64@npm:1.6.4"
+"@biomejs/cli-win32-arm64@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-win32-arm64@npm:2.2.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:1.6.4":
-  version: 1.6.4
-  resolution: "@biomejs/cli-win32-x64@npm:1.6.4"
+"@biomejs/cli-win32-x64@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@biomejs/cli-win32-x64@npm:2.2.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -385,16 +384,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@necko-tech/setup-smithy@workspace:."
   dependencies:
-    "@actions/cache": "npm:^3.2.4"
-    "@actions/core": "npm:^1.10.1"
-    "@actions/glob": "npm:^0.4.0"
-    "@actions/tool-cache": "npm:^2.0.1"
-    "@biomejs/biome": "npm:^1.6.4"
-    "@tsconfig/recommended": "npm:^1.0.6"
-    "@types/node": "npm:^20.12.7"
-    "@vercel/ncc": "npm:^0.38.1"
+    "@actions/cache": "npm:^4.0.5"
+    "@actions/core": "npm:^1.11.1"
+    "@actions/glob": "npm:^0.5.0"
+    "@actions/tool-cache": "npm:^2.0.2"
+    "@biomejs/biome": "npm:^2.2.3"
+    "@tsconfig/recommended": "npm:^1.0.10"
+    "@types/node": "npm:^24.3.1"
+    "@vercel/ncc": "npm:^0.38.3"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.4.5"
+    typescript: "npm:^5.9.2"
   languageName: unknown
   linkType: soft
 
@@ -418,6 +417,22 @@ __metadata:
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
   checksum: 10/115e8ceeec6bc69dff2048b35c0ab4f8bbee12d8bb6c1f4af758604586d802b6e669dcb02dda61d078de42c2b4ddce41b3d9e726d7daa6b4b850f4adbf7333ff
+  languageName: node
+  linkType: hard
+
+"@protobuf-ts/runtime-rpc@npm:^2.11.1":
+  version: 2.11.1
+  resolution: "@protobuf-ts/runtime-rpc@npm:2.11.1"
+  dependencies:
+    "@protobuf-ts/runtime": "npm:^2.11.1"
+  checksum: 10/32c9220a4898b8abca1628806075066292a3f2774965b7d1f39e9389c43a178d7b5023d9e67a0e024d0010790b0b7b6a4e73080e59a0e1701e2d5cee9572e6e2
+  languageName: node
+  linkType: hard
+
+"@protobuf-ts/runtime@npm:^2.11.1":
+  version: 2.11.1
+  resolution: "@protobuf-ts/runtime@npm:2.11.1"
+  checksum: 10/888b963a0b2b26c0b5f77d411b99bfc80068faa89e287efeede2e7686f1b0fea09fc5f0cf7e6be148728f2acf9c05ec7b5814f6633da6cdc810895677b2e68f5
   languageName: node
   linkType: hard
 
@@ -456,10 +471,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/recommended@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "@tsconfig/recommended@npm:1.0.6"
-  checksum: 10/595f5253306be0c9b45edb8290dd53b4e5cf31c3d562b3e4705c2209e35a98efe43377757a2ae4d10617f4e7113eab58d3b49d9aa3ff4177155a868efc6ed7b9
+"@tsconfig/recommended@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "@tsconfig/recommended@npm:1.0.10"
+  checksum: 10/f79184fc035b6440cb416af816a86287d94b608f97129b66cd5de48cc89c0678101a5732f6f06319d85efa71ff75c24e646164052418b37e917791f28a041af2
   languageName: node
   linkType: hard
 
@@ -480,12 +495,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.12.7":
-  version: 20.12.7
-  resolution: "@types/node@npm:20.12.7"
+"@types/node@npm:^24.3.1":
+  version: 24.3.1
+  resolution: "@types/node@npm:24.3.1"
   dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10/b4a28a3b593a9bdca5650880b6a9acef46911d58cf7cfa57268f048e9a7157a7c3196421b96cea576850ddb732e3b54bc982c8eb5e1e5ef0635d4424c2fce801
+    undici-types: "npm:~7.10.0"
+  checksum: 10/b9a52ed8f2fb1fa764ce988828b8d579761f944f1bb0492adbdeaa676a161086bad1a807b590799681ad93b3d272468b5c5ddccf5678735d487d1b65e481bc07
   languageName: node
   linkType: hard
 
@@ -498,14 +513,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/ncc@npm:^0.38.1":
-  version: 0.38.1
-  resolution: "@vercel/ncc@npm:0.38.1"
+"@vercel/ncc@npm:^0.38.3":
+  version: 0.38.3
+  resolution: "@vercel/ncc@npm:0.38.3"
   dependencies:
     node-gyp: "npm:latest"
   bin:
     ncc: dist/ncc/cli.js
-  checksum: 10/2ed9dff34ba2e7c2ba7113ed075effd023549d5041d355a367f5bf749b20916f68d2adad6737f7a2d03f0d92237f948ce8dfbc9429bdf3febc18d4fa5159d9b4
+  checksum: 10/f1a05a58e9c90d6940027b628590715a62bf1611c47bca546ad51bd6a0e8d25ce64c1c39eb27ba0b6747017182cb59ec42088da8d6530a6d561e9e1a4e8c9941
   languageName: node
   linkType: hard
 
@@ -1731,30 +1746,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.4.5":
-  version: 5.4.5
-  resolution: "typescript@npm:5.4.5"
+"typescript@npm:^5.9.2":
+  version: 5.9.2
+  resolution: "typescript@npm:5.9.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/d04a9e27e6d83861f2126665aa8d84847e8ebabcea9125b9ebc30370b98cb38b5dff2508d74e2326a744938191a83a69aa9fddab41f193ffa43eabfdf3f190a5
+  checksum: 10/cc2fe6c822819de5d453fa25aa9f32096bf70dde215d481faa1ad84a283dfb264e33988ed8f6d36bc803dd0b16dbe943efa311a798ef76d5b3892a05dfbfd628
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.4.5#optional!builtin<compat/typescript>":
-  version: 5.4.5
-  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=d69c25"
+"typescript@patch:typescript@npm%3A^5.9.2#optional!builtin<compat/typescript>":
+  version: 5.9.2
+  resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/584be8bac7112ad49a9eb9992f71d542b1ff2fafb5bb315e1c196145e8feab589f1d7223cfb2d5df6770789582e6918f8287d1f2f89911b38eb80e29c560ad00
+  checksum: 10/bd810ab13e8e557225a8b5122370385440b933e4e077d5c7641a8afd207fdc8be9c346e3c678adba934b64e0e70b0acf5eef9493ea05170a48ce22bef845fdc7
   languageName: node
   linkType: hard
 
-"undici-types@npm:~5.26.4":
-  version: 5.26.5
-  resolution: "undici-types@npm:5.26.5"
-  checksum: 10/0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
+"undici-types@npm:~7.10.0":
+  version: 7.10.0
+  resolution: "undici-types@npm:7.10.0"
+  checksum: 10/1f3fe777937690ab8a7a7bccabc8fdf4b3171f4899b5a384fb5f3d6b56c4b5fec2a51fbf345c9dd002ff6716fd440a37fa8fdb0e13af8eca8889f25445875ba3
   languageName: node
   linkType: hard
 
@@ -1789,15 +1804,6 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10/474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^3.3.2, uuid@npm:^3.3.3":
-  version: 3.4.0
-  resolution: "uuid@npm:3.4.0"
-  bin:
-    uuid: ./bin/uuid
-  checksum: 10/4f2b86432b04cc7c73a0dd1bcf11f1fc18349d65d2e4e32dd0fc658909329a1e0cc9244aa93f34c0cccfdd5ae1af60a149251a5f420ec3ac4223a3dab198fb2e
   languageName: node
   linkType: hard
 
