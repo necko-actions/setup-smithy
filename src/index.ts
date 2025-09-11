@@ -5,15 +5,16 @@ import * as core from "@actions/core";
 import { downloadTool, extractTar, extractZip } from "@actions/tool-cache";
 import { getArchitecture, restore } from "./utils";
 
-function getExtensionAndFunction(smithyVersion: string): {
+function getExtensionAndFunction(smithyVersion?: string): {
 	extract: typeof extractZip | typeof extractTar;
 	extension: "zip" | "tar.gz";
 } {
 	const SMITHY_MAJOR = 1;
 	const SMITHY_MINOR = 47;
-	const [major, minor, _patch] = smithyVersion.split(".");
-	const majorInt = Number.parseInt(major, 10);
-	const minorInt = Number.parseInt(minor, 10);
+
+	const [majorInt, minorInt, _patchInt] = (smithyVersion ?? "")
+		.split(".")
+		.map((n) => Number.parseInt(n, 10) || 0);
 
 	if (majorInt === SMITHY_MAJOR && minorInt < SMITHY_MINOR) {
 		return {
@@ -27,9 +28,26 @@ function getExtensionAndFunction(smithyVersion: string): {
 	};
 }
 
+function getSmithyDownloadUrl(
+	platform: string,
+	extension: string,
+	smithyVersion?: string,
+) {
+	const GITHUB_RELEASES_BASE = "https://github.com/smithy-lang/smithy/releases";
+
+	const baseDownloadUrl = smithyVersion
+		? `${GITHUB_RELEASES_BASE}/download/${smithyVersion}`
+		: `${GITHUB_RELEASES_BASE}/latest/download`;
+
+	const platformName = platform === "win32" ? "windows" : platform;
+	const arch = getArchitecture();
+
+	return `${baseDownloadUrl}/smithy-cli-${platformName}-${arch}.${extension}`;
+}
+
 async function action() {
 	const smithyVersion = core.getInput("version", {
-		required: true,
+		required: false,
 		trimWhitespace: true,
 	});
 
@@ -43,13 +61,14 @@ async function action() {
 	const { extension, extract } = getExtensionAndFunction(smithyVersion);
 
 	try {
-		const SMITHY_RELEASE_URL = `https://github.com/smithy-lang/smithy/releases/download/${smithyVersion}/smithy-cli-${
-			platform === "win32" ? "windows" : platform
-		}-${getArchitecture()}.${extension}`;
+		const downloadUrl = getSmithyDownloadUrl(
+			platform,
+			extension,
+			smithyVersion,
+		);
+		core.info(`Retrieve Smithy CLI from ${downloadUrl}`);
 
-		core.info(`Retrieve Smithy CLI from ${SMITHY_RELEASE_URL}`);
-
-		const smithyArchivePath = await downloadTool(SMITHY_RELEASE_URL);
+		const smithyArchivePath = await downloadTool(downloadUrl);
 
 		let extractedSmithyFolder = await extract(smithyArchivePath);
 
