@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.3.0](https://github.com/necko-actions/setup-smithy/compare/@necko-tech/setup-smithy-v1.2.0...@necko-tech/setup-smithy-v1.3.0) (2025-09-11)
+
+
+### Features
+
+* **action:** Make Smithy CLI version optional - Default to latest ([#21](https://github.com/necko-actions/setup-smithy/issues/21)) ([42c0c4c](https://github.com/necko-actions/setup-smithy/commit/42c0c4c9305fc8cfba0d7d1b401eab83ac8ecbea))
+* **action:** use node24 ([#26](https://github.com/necko-actions/setup-smithy/issues/26)) ([a1f6861](https://github.com/necko-actions/setup-smithy/commit/a1f686110c75e1eef7f8cc6ac924880fefe1d44c))
+
+
+### Reverts
+
+* **action:** disable cache ([#28](https://github.com/necko-actions/setup-smithy/issues/28)) ([0b10a11](https://github.com/necko-actions/setup-smithy/commit/0b10a11dd41e711bc81f6455daa9c308a62646f4))
+
+
+### Continuous Integration
+
+* **dependabot:** add dependabot for node, use biome action ([#22](https://github.com/necko-actions/setup-smithy/issues/22)) ([33ca271](https://github.com/necko-actions/setup-smithy/commit/33ca271d32efbb1f5816369b20b1c70a62d145ae))
+* **test-setup-smithy:** add tests for version no specified ([#27](https://github.com/necko-actions/setup-smithy/issues/27)) ([632e08b](https://github.com/necko-actions/setup-smithy/commit/632e08bb9aaee0a606be8d04209b425f4a97f766))
+
+
+### Dependencies
+
+* **node:** bump yarn version 4.9.4 ([#24](https://github.com/necko-actions/setup-smithy/issues/24)) ([af9de42](https://github.com/necko-actions/setup-smithy/commit/af9de42377b71f9dad05e37a764a4ce0654e531e))
+* **node:** update dependencies ([#25](https://github.com/necko-actions/setup-smithy/issues/25)) ([3999b4e](https://github.com/necko-actions/setup-smithy/commit/3999b4e69768237cfa26de4d6a2f3c8a362394b3))
+
 ## [1.2.0](https://github.com/necko-actions/setup-smithy/compare/@necko-tech/setup-smithy-v1.1.0...@necko-tech/setup-smithy-v1.2.0) (2024-04-15)
 
 
