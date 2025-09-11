@@ -95493,7 +95493,7 @@ function action() {
             required: false,
             trimWhitespace: true,
         });
-        const smithyBuildPath = core.getInput("smithy-build", {
+        core.getInput("smithy-build", {
             required: false,
             trimWhitespace: true,
         });
@@ -95508,9 +95508,9 @@ function action() {
             if (dirs.length === 1) {
                 extractedSmithyFolder = path.join(extractedSmithyFolder, dirs[0]);
             }
-            if (smithyBuildPath) {
-                yield (0, utils_1.restore)(smithyBuildPath);
-            }
+            // if (smithyBuildPath) {
+            // 	await restore(smithyBuildPath);
+            // }
             core.addPath(path.join(extractedSmithyFolder, "bin"));
             core.setOutput("SMITHY_PATH", extractedSmithyFolder);
         }
