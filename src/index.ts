@@ -3,7 +3,7 @@ import * as os from "node:os";
 import * as path from "node:path";
 import * as core from "@actions/core";
 import { downloadTool, extractTar, extractZip } from "@actions/tool-cache";
-import { getArchitecture, restore } from "./utils";
+import { getArchitecture } from "./utils";
 
 function getExtensionAndFunction(smithyVersion?: string): {
 	extract: typeof extractZip | typeof extractTar;
@@ -51,7 +51,7 @@ async function action() {
 		trimWhitespace: true,
 	});
 
-	const smithyBuildPath = core.getInput("smithy-build", {
+	core.getInput("smithy-build", {
 		required: false,
 		trimWhitespace: true,
 	});
@@ -78,9 +78,9 @@ async function action() {
 			extractedSmithyFolder = path.join(extractedSmithyFolder, dirs[0]);
 		}
 
-		if (smithyBuildPath) {
-			await restore(smithyBuildPath);
-		}
+		// if (smithyBuildPath) {
+		// 	await restore(smithyBuildPath);
+		// }
 
 		core.addPath(path.join(extractedSmithyFolder, "bin"));
 		core.setOutput("SMITHY_PATH", extractedSmithyFolder);
