@@ -389,7 +389,7 @@ __metadata:
     "@actions/glob": "npm:^0.5.0"
     "@actions/tool-cache": "npm:^2.0.2"
     "@biomejs/biome": "npm:^2.2.3"
-    "@tsconfig/recommended": "npm:^1.0.10"
+    "@tsconfig/recommended": "npm:^1.0.11"
     "@types/node": "npm:^24.3.1"
     "@vercel/ncc": "npm:^0.38.3"
     ts-node: "npm:^10.9.2"
@@ -471,10 +471,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/recommended@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "@tsconfig/recommended@npm:1.0.10"
-  checksum: 10/f79184fc035b6440cb416af816a86287d94b608f97129b66cd5de48cc89c0678101a5732f6f06319d85efa71ff75c24e646164052418b37e917791f28a041af2
+"@tsconfig/recommended@npm:^1.0.11":
+  version: 1.0.11
+  resolution: "@tsconfig/recommended@npm:1.0.11"
+  checksum: 10/84ed187f1426ee961b4d88b601160fafb5894da73e2adcf48719cb800d5deba8e551be883ece85983f0d34504f839648cdd084893a3bb394f5c9e3afd7e27ce4
   languageName: node
   linkType: hard
 
