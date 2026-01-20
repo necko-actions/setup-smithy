@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.1](https://github.com/necko-actions/setup-smithy/compare/@necko-tech/setup-smithy-v1.3.0...@necko-tech/setup-smithy-v1.3.1) (2026-01-20)
+
+
+### Dependencies
+
+* **github-actions:** bump actions/checkout from 5 to 6 ([#37](https://github.com/necko-actions/setup-smithy/issues/37)) ([40905da](https://github.com/necko-actions/setup-smithy/commit/40905daf5732bb821179de0043b7e2ef26ac5061))
+* **node:** bump @biomejs/biome from 2.2.3 to 2.3.11 ([#47](https://github.com/necko-actions/setup-smithy/issues/47)) ([b2167c2](https://github.com/necko-actions/setup-smithy/commit/b2167c2307f9ade4405c6490590f295de5ebab10))
+* **node:** bump @tsconfig/recommended from 1.0.10 to 1.0.13 ([#38](https://github.com/necko-actions/setup-smithy/issues/38)) ([1dfdf3f](https://github.com/necko-actions/setup-smithy/commit/1dfdf3fd39bc60576dec75bfa8b14590a2253ccf))
+* **node:** bump @types/node from 24.3.1 to 25.0.9 ([#45](https://github.com/necko-actions/setup-smithy/issues/45)) ([e2eb03b](https://github.com/necko-actions/setup-smithy/commit/e2eb03ba56ec69b99a14fcb7cdb43a127dc21e87))
+* **node:** bump @vercel/ncc from 0.38.3 to 0.38.4 ([#32](https://github.com/necko-actions/setup-smithy/issues/32)) ([1962e53](https://github.com/necko-actions/setup-smithy/commit/1962e53ec6ba35c937e88ee578edc05c5bf72794))
+* **node:** bump typescript from 5.9.2 to 5.9.3 ([#30](https://github.com/necko-actions/setup-smithy/issues/30)) ([80e3fe7](https://github.com/necko-actions/setup-smithy/commit/80e3fe77436bbf4bbc6efae0f213ca6228a0b4c5))
+* **node:** update `@actions/*` dependencies ([#49](https://github.com/necko-actions/setup-smithy/issues/49)) ([d12f404](https://github.com/necko-actions/setup-smithy/commit/d12f404d09e46c5979400451c4a7c0b7ab4a60fe))
+* **yarn:** update to yarn 4.12.0 ([76dd330](https://github.com/necko-actions/setup-smithy/commit/76dd3309b06a1da4c1abaf78ef80d344fd2f09e2))
+
 ## [1.3.0](https://github.com/necko-actions/setup-smithy/compare/@necko-tech/setup-smithy-v1.2.0...@necko-tech/setup-smithy-v1.3.0) (2025-09-11)
 
 
