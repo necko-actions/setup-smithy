@@ -19,4 +19,4 @@ updates:
       groups:
         actions:
           patterns:
-            - "@actionss/*"
+            - "@actions/*"
