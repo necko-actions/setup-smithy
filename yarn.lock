@@ -445,7 +445,7 @@ __metadata:
     "@actions/tool-cache": "npm:^3.0.0"
     "@biomejs/biome": "npm:^2.3.11"
     "@tsconfig/recommended": "npm:^1.0.13"
-    "@types/node": "npm:^25.0.9"
+    "@types/node": "npm:^25.1.0"
     "@vercel/ncc": "npm:^0.38.4"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.9.3"
@@ -526,12 +526,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^25.0.9":
-  version: 25.0.9
-  resolution: "@types/node@npm:25.0.9"
+"@types/node@npm:^25.1.0":
+  version: 25.1.0
+  resolution: "@types/node@npm:25.1.0"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10/2c16f137ed3a952903b7641df5ce16663ad00911dc6a9010156602251420da127bf7dbd32d22aac9eda0cc430381164d55a36240039b7d06ab693b9aad5c3f23
+  checksum: 10/ad15db75cfaec9e6311a1db7f3a91799be4c2698e1cfb0f74cc4d6e4398361550d00a4070921e1de7d9a10db83e41fd29f3a640dfacdabbd1c74ae16d8ce943a
   languageName: node
   linkType: hard
 
